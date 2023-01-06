@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+a{
+    all: inherit;
+    cursor: pointer;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+input{
+    width: 95%;
+    margin: 70px auto 40px;
+    display: block;
+    padding: 10px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 2px;
+    &:focus{
+        outline: 3px solid skyblue;
+    }
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    header{
+        display: flex;
+        border-bottom: 1px solid rgb(196, 196, 196);
+        justify-content: space-between;
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+            ul{
+                display: flex;
+                gap: 25px;
+                list-style: none;
+                li{
+                    color: black;
+                }
+            }
+        }
+    }
+    section{
+        width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 23%);
+        grid-template-rows: repeat(4, auto);
+        gap: 40px;
+        align-items: center;
+        padding-bottom: 100px;
+        .card{
+            background-color: white;
+            padding: 20px;
+            border: 3px;
+            overflow: hidden;
+            height: 400px;
+            position: relative;
+            .card-img{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    object-fit: contain;
+                }
+            }
+            .card-status{
+                width: 100%;
+                height: 50px;
+                background-color: rgb(36, 36, 36);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 10px;
+                transform: translate(-0%, 101%);
+                transition: all .3s ease-in-out; 
+                .card-status1{
+                    i{
+                        color: gold;
+                    }
+                }
+            }
+            &:hover{
+                .card-status{
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+footer{
+    background-color: white;
+    .foot-head{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 50px 0px;
+        .box{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 30px;
+            h2{
+                padding-bottom: 10px;
+            }
+            a{
+                padding: 3px 0px;
+            }
+        }
+    }
+    .foot-icons{
+        display: flex;
+        width: 300px;
+        margin-bottom: 30px;
+        font-size: larger;
+    }
+    .foot-end{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        a{
+            padding: 10px;
+            border-radius: 3px;
+            transition: all .1s linear;
+            i{
+                padding-left: 5px;
+            }
+            &:hover{
+                outline: 3px solid skyblue;
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+   .container{
+      section{
+        width: 100%;
+        justify-content: center;
+          grid-template-columns: repeat(3, 32%);
+      }
+   }
+}
+@media (max-width: 750px) {
+    .container{
+        width: 95%;
+        header{
+            padding-top: 30px;
+            display: block;
+            text-align: center;
+            nav{
+                display: flex;
+                justify-content: center;
+            }
+        }
+        section{
+            grid-template-columns: repeat(2, 45%);
+        }
+    }
+}
+@media (max-width: 450px) {
+    .container{
+        header{
+            nav{
+                ul{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }
+        }
+        section{
+            grid-template-columns: 90%;
+        }
+    }
+    footer{
+        .foot-end{
+            display: block;
+            text-align: center;
+            img{
+                margin: 20px 0px;
+            }
+    }
+    }
+}
